@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+      <link rel="alternate" type="application/atom+xml" title="CodeRefinery" href="https://coderefinery.org/atom.xml" />
+    
+
+    
+      <title>CodeRefinery - Community call meeting minutes</title>
+      <meta name="twitter:title" content="Community call meeting minutes" />
+    
+
+    
+      <meta name="description" content="We are working with students, researchers, Research Software Engineers from all
+disciplines and national e-infrastructure partners to advance FAIRness of
+Software management and development practices so that research groups can
+collaboratively develop, review, discuss, test, share and reuse their codes.
+" />
+      <meta name="twitter:description" content="We are working with students, researchers, Research Software Engineers from all
+disciplines and national e-infrastructure partners to advance FAIRness of
+Software management and development practices so that research groups can
+collaboratively develop, review, discuss, test, share and reuse their codes.
+" />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://raw.githubusercontent.com/coderefinery/coderefinery.org/main/content/logo/coderefinery.png" />
+    
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" integrity="sha256-BPfK9M5v34c2XP6p0cxVz1mUQLst0gTLk0mlc7kuodA=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js" integrity="sha256-yDc0eil8GjWFKqN1OSzHSVCiuGghTosZCcRje4tj7iQ=" crossorigin="anonymous"></script>
+
+    <!-- https://github.com/Leaflet/Leaflet.markercluster -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+
+    <link href="https://coderefinery.org/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Get Involved
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/organization/get-involved">Get involved</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/who-we-are">Who we are</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/contributors">Instructors and helpers</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/hubs">Training hubs</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/meeting-minutes">Meeting minutes</a>
+	          </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/about/project">Project</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/impact">Impact</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/statistics">Statistics</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/code-of-conduct">Code of Conduct</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/reports">Articles and reports</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/history">History</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Workshops/events
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/workshops/upcoming">Upcoming workshops/events</a>
+                <a class="dropdown-item" href="https://coderefinery.org/workshops/past">Past workshops/events</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lessons
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/lessons">Our lessons</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/reusing">Reusing</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/contributing">Contributing</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/other-projects">Other projects</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org/blog">Blog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org/repository">Gitlab repository</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </header>
+
+      <!-- end navigation -->
+<main role="main">
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col">
+          
+            <h1>Community call meeting minutes</h1>
+          
+          
+        </div>
+      </div>
+
+      
+  
+    <h1 id="coderefinery-community-call">CodeRefinery community call</h1>
+<p>:::info</p>
+<ul>
+<li>Date: <strong>Monday, November 22</strong>, 14-15 CET / 15-16 EET</li>
+<li>Invited: Everybody welcome</li>
+<li>Session chairs: JH</li>
+<li>Participants: JH, RB, SW, SR, BL, DI</li>
+<li>This document: https://hackmd.io/@coderefinery/community-call</li>
+<li>Theme: Briefing on Nov 2021 NeIC meeting and Jan 2022 NeIC AHM meeting
+:::</li>
+</ul>
+<p>Meeting minutes are archived at https://coderefinery.org/about/community-call/</p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Briefing on what was discussed and decided at the NeIC negotiation meeting that was held on Fri 5 Nov.
+<ul>
+<li>presentation slides by project manager: https://cicero.xyz/v3/remark/0.14.0/github.com/coderefinery/reports/main/sustainability-phase.md/</li>
+<li>formal start date March 1st 2022</li>
+<li>next formal steps: writing project plan (but this also depends on staff resources), definining governance structure (representatives of the steering group)</li>
+</ul>
+</li>
+<li>Info and discussion on the upcoming NeIC all hands event 24-27 Jan 2022 
+<ul>
+<li>Abstract: https://hackmd.io/LQxs3v72QRi79MFtge3fng</li>
+<li>Please contribute to this document before Friday Nov 26</li>
+<li>There will also be room to do focused CodeRefinery work during the AHM</li>
+</ul>
+</li>
+<li>CodeRefinery webpages - bring up items that might need to be edited before the holidays, and agree on who can do what.
+<ul>
+<li>Overview of what we plan to change and what has been implemented already are listed here: https://github.com/coderefinery/coderefinery.org/issues/582 </li>
+<li>You can help by reviewing PRs but also by opening issues and self-assigning issues</li>
+</ul>
+</li>
+<li>Any other topics for discussion </li>
+<li>Next meeting Mon 13 Dec, 14 CET</li>
+</ul>
+<hr />
+<p>:::info</p>
+<h3 id="how-to-archive-meeting-minutes">How to archive meeting minutes</h3>
+<ul>
+<li>Send PR towards https://github.com/coderefinery/coderefinery.org/blob/main/content/about/community-call.md</li>
+<li>In a second commit adjust this page: https://github.com/coderefinery/coderefinery.org/blob/main/content/organization/meeting-minutes.md</li>
+<li>There is no automatic HackMD-GitHub link yet. We can set one up but we do need to link to individual sessions to make browsing easier for those who don't want to inspect GitHub diffs.
+:::</li>
+</ul>
+
+  
+
+    </div>
+  </main>
+      <!-- footer -->
+      <footer class="text-muted">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg">
+              <p>
+                <strong>Funding</strong>
+              </p>
+              <p>
+                CodeRefinery is a project within the
+                <a href="https://neic.no" target="_blank">Nordic e-Infrastructure Collaboration</a> (NeIC).
+                NeIC is an organisational unit under <a href="http://www.nordforsk.org/en" target="_blank">NordForsk</a>.
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Privacy</strong>
+              </p>
+              <p>
+                <a href="/privacy-policy/" target="_blank">Privacy policy</a>
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Follow us</strong>
+              </p>
+              <p>
+                <a href="https://github.com/coderefinery" class="social" target="_blank">
+                  <i class="bi bi-github" style="font-size: 2rem; color: black;"></i>
+                </a>
+                <a href="https://twitter.com/coderefine"  class="social" target="_blank">
+                  <i class="bi bi-twitter" style="font-size: 2rem; color: cornflowerblue;"></i>
+                </a>
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Contact</strong>
+              </p>
+              <p>
+                <a href="mailto:support@coderefinery.org">support@coderefinery.org</a>
+              </p>
+            </div>
+          </div>
+      <!-- end footer -->
+
+        </div>
+    </footer>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js@4.2.2/anchor.min.js"
+            integrity="sha256-E4RlfxwyJVmkkk0szw7LYJxuPlp6evtPSBDlWHsYYL8="
+            crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+
+      // https://github.com/twbs/bootstrap/issues/1768#issuecomment-6531466
+      var shiftWindow = function() { scrollBy(0, -100) };
+      if (location.hash) shiftWindow();
+      window.addEventListener("hashchange", shiftWindow);
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+      <link rel="alternate" type="application/atom+xml" title="CodeRefinery" href="https://coderefinery.org/atom.xml" />
+    
+
+    
+      <title>CodeRefinery - Training hubs</title>
+      <meta name="twitter:title" content="Training hubs" />
+    
+
+    
+      <meta name="description" content="We are working with students, researchers, Research Software Engineers from all
+disciplines and national e-infrastructure partners to advance FAIRness of
+Software management and development practices so that research groups can
+collaboratively develop, review, discuss, test, share and reuse their codes.
+" />
+      <meta name="twitter:description" content="We are working with students, researchers, Research Software Engineers from all
+disciplines and national e-infrastructure partners to advance FAIRness of
+Software management and development practices so that research groups can
+collaboratively develop, review, discuss, test, share and reuse their codes.
+" />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://raw.githubusercontent.com/coderefinery/coderefinery.org/main/content/logo/coderefinery.png" />
+    
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" integrity="sha256-BPfK9M5v34c2XP6p0cxVz1mUQLst0gTLk0mlc7kuodA=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js" integrity="sha256-yDc0eil8GjWFKqN1OSzHSVCiuGghTosZCcRje4tj7iQ=" crossorigin="anonymous"></script>
+
+    <!-- https://github.com/Leaflet/Leaflet.markercluster -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+
+    <link href="https://coderefinery.org/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Get Involved
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/organization/get-involved">Get involved</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/who-we-are">Who we are</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/contributors">Instructors and helpers</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/hubs">Training hubs</a>
+                <a class="dropdown-item" href="https://coderefinery.org/organization/meeting-minutes">Meeting minutes</a>
+	          </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/about/project">Project</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/impact">Impact</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/statistics">Statistics</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/code-of-conduct">Code of Conduct</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/reports">Articles and reports</a>
+                <a class="dropdown-item" href="https://coderefinery.org/about/history">History</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Workshops/events
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/workshops/upcoming">Upcoming workshops/events</a>
+                <a class="dropdown-item" href="https://coderefinery.org/workshops/past">Past workshops/events</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lessons
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="https://coderefinery.org/lessons">Our lessons</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/reusing">Reusing</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/contributing">Contributing</a>
+                <a class="dropdown-item" href="https://coderefinery.org/lessons/other-projects">Other projects</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org/blog">Blog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://coderefinery.org/repository">Gitlab repository</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </header>
+
+      <!-- end navigation -->
+<main role="main">
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col">
+          
+            <h1>Training hubs</h1>
+          
+          
+        </div>
+      </div>
+
+      
+  
+    <div class="row">
+  <div class="col-sm-6">
+    <p>
+    Institutions can become active partners (training hubs), so that they provide regular
+    training for their areas.  Hubs have at least one local instructor
+    committed to organizing a workshop at least once a year.
+    </p>
+  </div>
+  <div class="col-sm-6">
+  <div id="map-hubs" style="width: 300px; height: 200px;"></div>
+  <script>
+      var map_hubs = L.map('map-hubs').setView([61.0, 15.0], 4);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map_hubs);
+
+      let hubs = [
+          {lat: 59.348442, lon: 18.072857, title: 'KTH/PDC Stockholm'},
+          {lat: 59.943530, lon: 10.717122, title: 'University of Oslo/ USIT'},
+          {lat: 60.186802, lon: 24.821555, title: 'Aalto University'},
+          {lat: 63.415677, lon: 10.405992, title: 'NTNU Trondheim'},
+      ];
+
+      for (const hub of hubs){
+          marker = L.circleMarker([hub.lat, hub.lon], {radius: 15}).addTo(map_hubs);
+          marker.bindPopup(hub.title);
+          marker.on('mouseover', function (e) {
+              this.openPopup();
+          });
+          marker.on('mouseout', function (e) {
+              this.closePopup();
+          });
+      }
+  </script>
+  </div>
+</div>
+<p>From October 2016 to October 2021, CodeRefinery was a project funded by <a href="https://neic.no/">NeIC</a> and the CodeRefinery community is amazing! We would like to continue providing similar services after the end of the project. </p>
+<p>Our plan to make CodeRefinery sustainable:</p>
+<ol>
+<li>CodeRefinery governance;</li>
+<li>CodeRefinery Kickstarter campaign to be able to register CodeRefinery as an independent foundation;</li>
+<li>CodeRefinery membership</li>
+</ol>
+<h2 id="coderefinery-governance">CodeRefinery governance</h2>
+<p>We are currently working at establishing the CodeRefinery governance.</p>
+<h2 id="coderefinery-kickstarter">CodeRefinery Kickstarter</h2>
+<p>We need your support to spin-off and register CodeRefinery as a foundation in one of the Nordic countries.</p>
+<p>CodeRefinery is working on setting up a kickstart campaign to raise the necessary funds.</p>
+<p>If you are interested, get in touch with us on <a href="https://coderefinery.zulipchat.com">https://coderefinery.zulipchat.com</a> in #coderefinery stream. </p>
+<h2 id="coderefinery-membership">CodeRefinery membership</h2>
+<p>CodeRefinery is working on defining membership tiers with associated benefits to continue its activities. </p>
+<p>We will offer different options such as:</p>
+<ul>
+<li>Free membership with no in-kind trainers;</li>
+<li>Free membership with in-kind trainers;</li>
+<li>Basic annual membership;</li>
+<li>Premium annual membership;</li>
+</ul>
+<p>We are working on defining the benefits for each option.</p>
+<h2 id="hub-cooperation">Hub cooperation</h2>
+<p>As part of the CodeRefinery sustainability plan, hubs will allow to
+share instructors in-kind: since a workshop needs at least two or
+three instructors, instructors can travel between hubs so that we
+maintain community, share knowledge, and continue workshops.</p>
+<h2 id="current-hubs">Current hubs</h2>
+<ul>
+<li>Aalto University, Helsinki region, sponsored by <a href="https://scicomp.aalto.fi/">Aalto Scientific
+Computing</a>.
+Workshops every May (Helsinki)/December (Aalto) in partnership with
+the University of Helsinki.</li>
+<li>KTH, Stockholm, sponsored by <a href="https://www.pdc.kth.se/">PDC</a>.
+Workshops every March-April and October-November.</li>
+<li>NTNU, Trondheim. Workshops every February and October-November.</li>
+<li>University of Oslo. Workshops every June (and possibly more).</li>
+</ul>
+<h2 id="become-a-hub">Become a hub</h2>
+<p>To become a hub, please sponsor a first workshop, then a second, and then
+eventually it becomes a regular thing. There should be at least one local
+instructor who can regularly take part in other CodeRefinery activities and
+several helpers.</p>
+<p>To get started, consider attending another workshop as a helper
+(optional), then <a href="/workshops/">request a workshop</a>, then <a href="/get-involved/">join our
+chat and become an instructor</a>. When you would like
+to be add to the list above, send a pull request.</p>
+
+  
+
+    </div>
+  </main>
+      <!-- footer -->
+      <footer class="text-muted">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg">
+              <p>
+                <strong>Funding</strong>
+              </p>
+              <p>
+                CodeRefinery is a project within the
+                <a href="https://neic.no" target="_blank">Nordic e-Infrastructure Collaboration</a> (NeIC).
+                NeIC is an organisational unit under <a href="http://www.nordforsk.org/en" target="_blank">NordForsk</a>.
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Privacy</strong>
+              </p>
+              <p>
+                <a href="/privacy-policy/" target="_blank">Privacy policy</a>
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Follow us</strong>
+              </p>
+              <p>
+                <a href="https://github.com/coderefinery" class="social" target="_blank">
+                  <i class="bi bi-github" style="font-size: 2rem; color: black;"></i>
+                </a>
+                <a href="https://twitter.com/coderefine"  class="social" target="_blank">
+                  <i class="bi bi-twitter" style="font-size: 2rem; color: cornflowerblue;"></i>
+                </a>
+              </p>
+            </div>
+            <div class="col-lg">
+              <p>
+                <strong>Contact</strong>
+              </p>
+              <p>
+                <a href="mailto:support@coderefinery.org">support@coderefinery.org</a>
+              </p>
+            </div>
+          </div>
+      <!-- end footer -->
+
+        </div>
+    </footer>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js@4.2.2/anchor.min.js"
+            integrity="sha256-E4RlfxwyJVmkkk0szw7LYJxuPlp6evtPSBDlWHsYYL8="
+            crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+
+      // https://github.com/twbs/bootstrap/issues/1768#issuecomment-6531466
+      var shiftWindow = function() { scrollBy(0, -100) };
+      if (location.hash) shiftWindow();
+      window.addEventListener("hashchange", shiftWindow);
+    </script>
+
+  </body>
+</html>
